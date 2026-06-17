@@ -1,40 +1,68 @@
 # HitSignal
 
-Detección de Hidden Gems y búsqueda de similitud acústica utilizando PySpark y datos de Spotify.
+Hidden Gem Detection and Acoustic Similarity Search using PySpark and Spotify Data
 
-## Descripción
+## Overview
 
-HitSignal es un proyecto de análisis de datos masivos que busca identificar canciones poco populares con alto potencial acústico.
+HitSignal is a Big Data project developed with PySpark to identify low-popularity songs with high acoustic potential. The project combines audio features, artist metadata, and similarity search techniques to discover songs that may have been overlooked despite sharing characteristics with successful tracks.
 
-El sistema utiliza PySpark para:
+The system processes Spotify datasets, enriches track information with artist data, computes an acoustic score, and identifies "Hidden Gems" based on popularity, recency, artist exposure, and acoustic similarity.
 
-- Limpieza de datos
-- Análisis exploratorio
-- Construcción de un score acústico
-- Enriquecimiento con datos de artistas
-- Detección de Hidden Gems
-- Búsqueda de similitud mediante LSH
+## Features
+
+* Large-scale data processing with PySpark
+* Data cleaning and exploratory data analysis (EDA)
+* Artist enrichment through dataset joins
+* Acoustic scoring system
+* Hidden Gem detection pipeline
+* Exact similarity search
+* Approximate similarity search using LSH
+* Reproducible ETL workflow
 
 ## Dataset
 
-- tracks.csv
-- artists.csv
+The project uses:
 
-Más de 586,000 canciones y 1.1 millones de artistas.
+* Spotify Tracks Dataset
+* Spotify Artists Dataset
 
-## Tecnologías
+Processed data includes more than:
 
-- Python
-- PySpark
-- Spark MLlib
-- Parquet
+* 586,000 tracks
+* 1.1 million artists
 
-## Resultados
+## Technologies
 
-- 11,613 Hidden Gems detectadas
-- Similaridad acústica mediante distancia euclidiana
-- Escalamiento usando LSH
+* Python
+* PySpark
+* Spark SQL
+* Spark MLlib
+* Parquet
+* Jupyter Notebook
 
-## Autor
+## Methodology
+
+1. Clean and validate track records.
+2. Perform exploratory data analysis.
+3. Build a weighted acoustic score.
+4. Enrich tracks using artist metadata.
+5. Apply Hidden Gem filters.
+6. Remove duplicates.
+7. Perform similarity search against popular tracks.
+
+## Results
+
+* 11,613 Hidden Gems identified
+* Acoustic similarity matching against hit songs
+* Exact and approximate nearest-neighbor search implemented
+
+## Repository Structure
+
+├── notebooks/
+├── docs/
+├── Archivos/
+└── README.md
+
+## Author
 
 Luis Alfredo Ramírez Maza
